@@ -29,7 +29,7 @@ public class HelloControllerTest {
     private MockMvc mockMvc;
 
     @Configuration
-    @EnableWebMvc
+    @EnableWebMvc // Loads the DefaultFormattingConversionService to support binding to Optionals (ObjectToOptionalConverter)
     @ComponentScan(basePackages = "com.rseanking")
     public static class HelloControllerConfiguration {
     }
