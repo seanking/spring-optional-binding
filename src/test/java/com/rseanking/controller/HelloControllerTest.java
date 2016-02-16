@@ -40,14 +40,14 @@ public class HelloControllerTest {
     }
 
     @Test
-    public void shouldHandleMissingString() throws Exception {
+    public void shouldHandleRequetWithoutName() throws Exception {
         mockMvc.perform(get("/hello"))
             .andExpect(status().isOk())
             .andExpect(content().string("Hello World!"));
     }
 
     @Test
-    public void shouldGetOptionalString() throws Exception {
+    public void shouldHandleRequetWithName() throws Exception {
         mockMvc.perform(get("/hello").param("name", "Foo"))
             .andExpect(status().isOk())
             .andExpect(content().string("Hello Foo!"));
